@@ -1,0 +1,15 @@
+[user]
+    name = Michael Nisi
+    email = michael.nisi@gmail.com
+[github]
+    user = michaelnisi
+[core]
+    excludesfile = .gitignore_global
+    editor = /usr/local/bin/vim
+[grep]
+    extendRegexp = true
+    lineNumber = true
+[color]
+    ui = true
+[push]
+    default = simple

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+cd ~/.vim/bundle
+
+git clone git://github.com/aerosol/vim-erlang-skeletons.git
+git clone git://github.com/altercation/vim-colors-solarized.git
+git clone git://github.com/benmills/vimux.git
+git clone git://github.com/elixir-lang/vim-elixir.git
+git clone git://github.com/ervandew/supertab.git
+git clone git://github.com/kelan/gyp.vim.git
+git clone git://github.com/markcornick/vim-vagrant.git
+git clone git://github.com/michaelnisi/swift.vim.git
+git clone git://github.com/oscarh/vimerl.git
+git clone git://github.com/vim-scripts/dtrace-syntax-file.git
+git clone git://github.com/vim-scripts/jade.vim.git
+git clone git://github.com/vim-scripts/nginx.vim.git
+git clone git://github.com/wincent/Command-T.git

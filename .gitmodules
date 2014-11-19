@@ -1,0 +1,30 @@
+[submodule "vim-erlang-skeletons"]
+	path = vim-erlang-skeletons
+	url = git://github.com/aerosol/vim-erlang-skeletons.git
+[submodule "vim-colors-solarized"]
+	path = vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vimux"]
+	path = vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "vim-elixir"]
+	path = vim-elixir
+	url = git://github.com/elixir-lang/vim-elixir.git
+[submodule "supertab"]
+	path = supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim-vagrant"]
+	path = vim-vagrant
+	url = git://github.com/markcornick/vim-vagrant.git
+[submodule "vimerl"]
+	path = vimerl
+	url = git://github.com/oscarh/vimerl.git
+[submodule "jade.vim"]
+	path = jade.vim
+	url = git://github.com/vim-scripts/jade.vim.git
+[submodule "nginx.vim"]
+	path = nginx.vim
+	url = git://github.com/vim-scripts/nginx.vim.git
+[submodule "Command-T"]
+	path = Command-T
+	url = git://github.com/wincent/Command-T.git
