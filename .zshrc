@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_AUTO_TITLE=true
 autoload -U promptinit && promptinit
+bindkey -v
 
 PATH=/usr/local/bin
 PATH=$PATH:/usr/bin
