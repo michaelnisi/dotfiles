@@ -8,7 +8,9 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_AUTO_TITLE=true
 autoload -U promptinit && promptinit
-bindkey -v
+
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
 
 PATH=/usr/local/bin
 PATH=$PATH:/usr/bin

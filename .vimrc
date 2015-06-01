@@ -41,7 +41,7 @@ set scrolloff=3
 set backspace=indent,eol,start
 
 " Ignore
-set wildignore+=*.o,*.obj,.git,node_modules,build,*.xcodeproj,deps
+set wildignore+=*.o,*.obj,.git,*.xc*,node_modules,ebin,build,*.xcodeproj,deps,logs
 
 " File-type highlighting and configuration.
 syntax on
@@ -107,7 +107,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.swift set ft=swift
 
   " Specific tabs and spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType make setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType markdown setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType rust setlocal ts=2 sts=2 sw=2 expandtab
 
