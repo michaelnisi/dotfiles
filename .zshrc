@@ -8,9 +8,8 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_AUTO_TITLE=true
 autoload -U promptinit && promptinit
-
-bindkey '^[[1;3C' forward-word
-bindkey '^[[1;3D' backward-word
+bindkey -v
+ulimit -n 4096
 
 PATH=/usr/local/bin
 PATH=$PATH:/usr/bin
@@ -22,8 +21,4 @@ PATH=$PATH:/sbin
 export PATH
 export NODE_PATH="/usr/local/lib/node_modules"
 
-# alias tmux="TERM=screen-256color-bce tmux"
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-ulimit -n 4096
