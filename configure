@@ -7,3 +7,5 @@ ln -i -s .tmux.conf ~/.tmux.conf
 ln -i -s .gitignore_global ~/.gitignore_global
 
 git config --global core.excludesfile ~/.gitignore_global
+
+exit

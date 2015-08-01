@@ -8,7 +8,6 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_AUTO_TITLE=true
 autoload -U promptinit && promptinit
-bindkey -v
 ulimit -n 4096
 
 PATH=/usr/local/bin
