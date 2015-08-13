@@ -2,8 +2,8 @@
 
 # set -o xtrace
 
-AUTOLOAD=${$HOME}/.vim/autoload
-BUNDLE=${HOME}/.vim/bundle
+AUTOLOAD=${HOME}/.vimtest/autoload
+BUNDLE=${HOME}/.vimtest/bundle
 
 pathogen() {
   curl -Sso ${AUTOLOAD}/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -27,9 +27,8 @@ clone() {
   )
   mkdir -p $AUTOLOAD $BUNDLE
   cd $BUNDLE || exit 1
-  for repo in "${repos[@]}"
-  do
-    git clone "$repo"
+  for repo in ${repos[@]}; do
+    git clone $repo
   done
 }
 
