@@ -1,17 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # set -o xtrace
 
-AUTOLOAD=/tmp/autoload
-BUNDLE=/tmp/bundle
+AUTOLOAD=${$HOME}/.vim/autoload
+BUNDLE=${HOME}/.vim/bundle
 
-function pathogen {
+pathogen() {
   curl -Sso ${AUTOLOAD}/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 }
 
-function clone {
-  REPOS=(
-    hhttps://github.com/altercation/vim-colors-solarized.git
+clone() {
+  local repos=(
+    https://github.com/altercation/vim-colors-solarized.git
     https://github.com/benmills/vimux.git
     https://github.com/elixir-lang/vim-elixir.git
     https://github.com/ervandew/supertab.git
@@ -26,8 +26,8 @@ function clone {
     https://github.com/wincent/Command-T.git
   )
   mkdir -p $AUTOLOAD $BUNDLE
-  cd $BUNDLE
-  for repo in "${REPOS[@]}"
+  cd $BUNDLE || exit 1
+  for repo in "${repos[@]}"
   do
     git clone "$repo"
   done
