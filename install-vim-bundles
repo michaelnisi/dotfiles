@@ -2,8 +2,8 @@
 
 # set -o xtrace
 
-AUTOLOAD=${HOME}/.vimtest/autoload
-BUNDLE=${HOME}/.vimtest/bundle
+AUTOLOAD=${HOME}/.vim/autoload
+BUNDLE=${HOME}/.vim/bundle
 
 pathogen() {
   curl -Sso ${AUTOLOAD}/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
