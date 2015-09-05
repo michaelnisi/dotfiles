@@ -19,5 +19,3 @@ PATH=$PATH:/sbin
 
 export PATH
 export NODE_PATH="/usr/local/lib/node_modules"
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

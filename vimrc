@@ -3,7 +3,6 @@ set nocompatible
 
 " Manage runtimepath
 call pathogen#infect()
-call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -17,21 +16,14 @@ set title
 set guioptions-=T
 
 " Colors
-if has('gui_running')
-  set background=light
-  set listchars=tab:▸\ ,eol:¬
-  highlight NonText guifg=#cccccc
-  highlight SpecialKey guifg=#cccccc
-else
-  set background=dark
-endif
+set background=dark
 colorscheme solarized
 
 " Search
 set ignorecase
 set smartcase
 set hlsearch
-set incsearch " ...dynamically as they are typed.
+set incsearch "dynamically as they are typed
 nmap <silent> ,/ :nohlsearch<CR>
 
 " Window
@@ -87,24 +79,21 @@ if has("autocmd")
   filetype on
 
   " Filetypes
-  au BufRead,BufNewFile *.json set ft=javascript
-  au BufRead,BufNewFile *.rs set ft=rust
-  au BufRead,BufNewFile *.conf set ft=nginx
-  au BufRead,BufNewFile *.rss set ft=xml
-  au BufRead,BufNewFile *.atom set ft=xml
-  au BufRead,BufNewFile *.scss set ft=css
-  au BufRead,BufNewFile *.conf set ft=nginx
-  au BufRead,BufNewFile *.mm set ft=objc
-  au BufRead,BufNewFile rebar.config set ft=erlang
-  au BufRead,BufNewFile *.t set ft=erlang
   au BufRead,BufNewFile *.app set ft=erlang
   au BufRead,BufNewFile *.app.src set ft=erlang
-  au BufRead,BufNewFile Rakefile set ft=ruby
-  au BufRead,BufNewFile Podfile set ft=ruby
-  au BufRead,BufNewFile *.podspec set ft=ruby
+  au BufRead,BufNewFile *.atom set ft=xml
+  au BufRead,BufNewFile *.conf set ft=nginx
+  au BufRead,BufNewFile *.json set ft=javascript
   au BufRead,BufNewFile *.ll set ft=llvm
-  au BufRead,BufNewFile *.td set ft=tablegen
+  au BufRead,BufNewFile *.mm set ft=objc
+  au BufRead,BufNewFile *.podspec set ft=ruby
+  au BufRead,BufNewFile *.rs set ft=rust
+  au BufRead,BufNewFile *.rss set ft=xml
+  au BufRead,BufNewFile *.scss set ft=css
   au BufRead,BufNewFile *.swift set ft=swift
+  au BufRead,BufNewFile Podfile set ft=ruby
+  au BufRead,BufNewFile Rakefile set ft=ruby
+  au BufRead,BufNewFile rebar.config set ft=erlang
 
   " Specific tabs and spaces
   autocmd FileType make setlocal ts=2 sts=2 sw=2 noexpandtab
