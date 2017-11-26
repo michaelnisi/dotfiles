@@ -1,0 +1,6 @@
+#! /bin/sh
+
+ln -i -v .gitconfig ~/.gitconfig
+ln -i -v .vimrc ~/.vimrc
+ln -i -v .zshrc ~/.zshrc
+ln -i -v .tmux.conf ~/.tmux.conf

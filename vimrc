@@ -1,10 +1,20 @@
-" Use Vim settings
 set nocompatible
+filetype off
 
-" Manage runtimepath
-call pathogen#infect()
-syntax on
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'apple/swift', {'rtp': 'utils/vim/', 'name': 'Swift-Syntax'}
+Plugin 'benmills/vimux.git'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'rust-lang/rust.vim'
+call vundle#end()
 filetype plugin indent on
+
+syntax on
 
 " UI
 set laststatus=2
@@ -33,9 +43,9 @@ set scrolloff=3
 set backspace=indent,eol,start
 
 " Ignore
-set wildignore+=*.o,*.obj,.git,*.xc*,node_modules,ebin,build,*.xcodeproj,deps,logs
+set wildignore+=*.o,*.obj,.git,*.xc*,node_modules,ebin,build,deps,logs
 
-" File-type highlighting and configuration.
+" File-type highlighting and configuration
 syntax on
 filetype on
 filetype plugin on
@@ -58,18 +68,10 @@ nnoremap <C-y> 5<C-y>
 nmap <leader>n :bn<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>r :source $MYVIMRC<CR>
-nmap <silent><leader>j :CommandTJump<CR>
-nmap <silent><leader>f :CommandTFlush<CR>
 
 " Temporary files
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-" Erlang
-let g:erlangWranglerPath='/usr/local/lib/erlang/lib/wrangler-1.0'
-let g:erlangManPath='/usr/local/Cellar/erlang/R14B04/share/man'
-let g:erlangCompletionDisplayDoc=1
-let g:erlangHighlightBif=1
 
 " Tabs and spaces
 set ts=2 sts=2 sw=2 expandtab
@@ -91,6 +93,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.rss set ft=xml
   au BufRead,BufNewFile *.scss set ft=css
   au BufRead,BufNewFile *.swift set ft=swift
+  au BufRead,BufNewFile *.t set ft=erlang
+  au BufRead,BufNewFile *.td set ft=tablegen
   au BufRead,BufNewFile Podfile set ft=ruby
   au BufRead,BufNewFile Rakefile set ft=ruby
   au BufRead,BufNewFile rebar.config set ft=erlang
@@ -114,28 +118,24 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-" Command-T
-set ttimeoutlen=50
-
-if &term =~ "xterm" || &term =~ "screen"
-  let g:CommandTCancelMap=['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap=['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap=['<C-p>', '<C-k>', '<ESC>OA']
-endif
-
-" SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType="context"
+" Map <Tab> to either actually insert a <Tab> if the current line is only
+" whitespace, or start/continue a CTRL-N completion operation.
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " Vimux
-"Prompt for command to run
 map rp :VimuxPromptCommand
-" Run last command executed by RunVimTmuxCommand
 map rl :VimuxRunLastCommand
-" Inspect runner pane
 map ri :VimuxInspectRunner
-" Close all other tmux panes in current window
 map rx :VimuxClosePanes
-" Interrupt any command running in the runner pane
 map rs :VimuxInterruptRunner
-" Use nearest pane (not used by vim) if found instead of running split-window
 let VimuxUseNearestPane=1
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'c'
