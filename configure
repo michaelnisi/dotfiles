@@ -14,14 +14,14 @@ oh_my_zsh() {
 }
 
 link() {
-  ln -i -v "${DIR}/.gitconfig" ~/.gitconfig
-  ln -i -v "${DIR}/.vimrc" ~/.vimrc
-  ln -i -v "${DIR}/.zshrc" ~/.zshrc
-  ln -i -v "${DIR}/.tmux.conf" ~/.tmux.conf
+  ln -i -v "${DIR}/gitconfig" ~/.gitconfig
+  ln -i -v "${DIR}/vimrc" ~/.vimrc
+  ln -i -v "${DIR}/zshrc" ~/.zshrc
+  ln -i -v "${DIR}/tmux.conf" ~/.tmux.conf
 }
 
 echo "Installing Oh My Zsh..."
-oh_my_zsh
+# oh_my_zsh
 
 echo "Linking Dotfiles..."
 link
