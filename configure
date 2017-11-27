@@ -1,6 +1,27 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
-ln -i -v .gitconfig ~/.gitconfig
-ln -i -v .vimrc ~/.vimrc
-ln -i -v .zshrc ~/.zshrc
-ln -i -v .tmux.conf ~/.tmux.conf
+set -o xtrace
+
+SOURCE="${BASH_SOURCE[0]}"
+if [[ -h $SOURCE ]]; then
+  SOURCE="$( readlink "$SOURCE" )"
+fi
+
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+oh_my_zsh() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+link() {
+  ln -i -v "${DIR}/.gitconfig" ~/.gitconfig
+  ln -i -v "${DIR}/.vimrc" ~/.vimrc
+  ln -i -v "${DIR}/.zshrc" ~/.zshrc
+  ln -i -v "${DIR}/.tmux.conf" ~/.tmux.conf
+}
+
+echo "Installing Oh My Zsh..."
+oh_my_zsh
+
+echo "Linking Dotfiles..."
+link
