@@ -5,7 +5,7 @@
     user = michaelnisi
 [core]
     excludesfile = ~/.gitignore_global
-    editor = /usr/local/bin/vim
+    editor = /usr/bin/vim
 [grep]
     extendRegexp = true
     lineNumber = true
