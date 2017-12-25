@@ -18,6 +18,6 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/sbin
 PATH=$PATH:/opt/pkg/sbin
+PATH=$PATH:~/.npm-global/bin
 
 export PATH
-export NODE_PATH="/usr/local/lib/node_modules"
