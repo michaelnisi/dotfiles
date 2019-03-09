@@ -1,5 +1,6 @@
 # Compiled files
 *.[oa]
+*.beam
 *.pyc
 
 # Temporary files
@@ -16,9 +17,3 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-
-# Directories
-build/
-tmp/
-log/
-pid/

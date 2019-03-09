@@ -11,6 +11,7 @@ Plugin 'benmills/vimux.git'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'rust-lang/rust.vim'
+Plugin 'fgsch/vim-varnish'
 call vundle#end()
 filetype plugin indent on
 
@@ -26,21 +27,14 @@ set title
 set guioptions-=T
 
 " Colors
-if has('gui_running')
-  set background=light
-  set listchars=tab:▸\ ,eol:¬
-  highlight NonText guifg=#cccccc
-  highlight SpecialKey guifg=#cccccc
-else
-  set background=dark
-endif
+set background=dark
 colorscheme solarized
 
 " Search
 set ignorecase
 set smartcase
 set hlsearch
-set incsearch " ...dynamically as they are typed.
+set incsearch "dynamically as they are typed
 nmap <silent> ,/ :nohlsearch<CR>
 
 " Window
@@ -50,7 +44,7 @@ set scrolloff=3
 set backspace=indent,eol,start
 
 " Ignore
-set wildignore+=*.o,*.obj,.git,node_modules,build,*.xcodeproj,deps,logs
+set wildignore+=*.o,*.obj,.git,*.xc*,node_modules,ebin,build,deps,logs
 
 " File-type highlighting and configuration
 syntax on
@@ -95,7 +89,6 @@ if has("autocmd")
   au BufRead,BufNewFile *.json set ft=javascript
   au BufRead,BufNewFile *.ll set ft=llvm
   au BufRead,BufNewFile *.mm set ft=objc
-  au BufRead,BufNewFile *.plist set ft=xml
   au BufRead,BufNewFile *.podspec set ft=ruby
   au BufRead,BufNewFile *.rs set ft=rust
   au BufRead,BufNewFile *.rss set ft=xml
@@ -108,7 +101,7 @@ if has("autocmd")
   au BufRead,BufNewFile rebar.config set ft=erlang
 
   " Specific tabs and spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType make setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType markdown setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType rust setlocal ts=2 sts=2 sw=2 expandtab
 

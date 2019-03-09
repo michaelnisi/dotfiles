@@ -20,4 +20,7 @@ PATH=$PATH:/sbin
 PATH=$PATH:/opt/pkg/sbin
 PATH=$PATH:~/.npm-global/bin
 
+test -s "$HOME/.fastlane/bin" && source "$HOME/.fastlane/bin"
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 export PATH
