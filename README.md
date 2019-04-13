@@ -41,6 +41,6 @@ Solarized for Xcode
 - [Kiex](https://github.com/taylor/kiex)
 - [Nvm](https://github.com/creationix/nvm)
 
-## Furthermore
+## Terminal?
 
-If you are new to this terminal geekery, here’s a nice [write-up](https://lucasfcosta.com/2019/02/10/terminal-guide-2019.html) by [Lucas](https://twitter.com/thewizardlucas).
+🆕 to this terminal geekery? Read this [write-up](https://lucasfcosta.com/2019/02/10/terminal-guide-2019.html).
