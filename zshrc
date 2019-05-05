@@ -18,9 +18,18 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/sbin
 PATH=$PATH:/opt/pkg/sbin
-PATH=$PATH:~/.npm-global/bin
+
+GEM_HOME=$HOME/.gem
+
+PATH=$PATH:$HOME/.npm-global/bin
+PATH=$PATH:$GEM_HOME/ruby/2.3.0/bin
 
 test -s "$HOME/.fastlane/bin" && source "$HOME/.fastlane/bin"
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
+export NVM_DIR="$HOME/.nvm"
+alias install_nvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""
+alias install_nvm_bash_completion="[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion""
+
 export PATH
+export GEM_HOME
