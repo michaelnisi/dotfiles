@@ -23,10 +23,11 @@ install_oh_my_zsh() {
 # Copies configration files.
 copy() {
   cp -i gitconfig "${HOME}/.gitconfig"
+  cp -i gitignore_global "${HOME}/.gitignore_global"
+  cp -i kerlrc "${HOME}/.kerlrc"
+  cp -i tmux.conf "${HOME}/.tmux.conf"
   cp -i vimrc "${HOME}/.vimrc"
   cp -i zshrc "${HOME}/.zshrc"
-  cp -i tmux.conf "${HOME}/.tmux.conf"
-  cp -i gitignore_global "${HOME}/.gitignore_global"
 }
 
 # Sets global git configuration.
