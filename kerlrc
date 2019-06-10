@@ -1,0 +1,1 @@
+KERL_CONFIGURE_OPTIONS="--without-odbc --without-javac --with-ssl=/opt/pkg --disable-hipe"
