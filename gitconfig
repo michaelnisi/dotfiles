@@ -4,7 +4,7 @@
 [github]
     user = michaelnisi
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
     editor = /usr/bin/vim
 [grep]
     extendRegexp = true
@@ -13,3 +13,7 @@
     ui = true
 [push]
     default = simple
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
